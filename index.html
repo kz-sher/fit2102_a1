@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            #intro{
+                font-family: Monaco;
+                text-align: justify;
+            }
+            h3{
+                color:darkslateblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Project Index Page</h1>
+        Feel free to add a high-level intro to what you have done here.  
+        <p>The links below must remain.
+        <p>
+        <a href="basicexamples.html">Basic SVG Observable Examples</a><br>
+        <a href="checklist.html">Observable Tests</a><br>
+        <a href="diagrameditor.html">Link to your Diagram Editor App</a>
+        <h1>Introduction</h1>
+        <h3><u>Observable Class</u></h3>
+        <p id='intro'>
+        Starting from buiding Observable class in observable.ts, most of the methods are obtained from the solution I have done
+        for Week4 Tutorial. For FromEvent and takeUntil methods, I found them in the course note and went through the description as well. 
+        flatMap becomes the only method that I have to really spend time doing, so I finished it by reading through the relavant description 
+        and some online resources.    
+        </p>
+        <h3><u>Basic Example Exercise</u></h3>
+        <p id='intro'>
+        Regarding the basic examples observable example, what I did for drawAndDragObservable is actually copying code from dragObservable as well 
+        as drawObservable and do some modifications and rearrangements. Most importantly, I actually use event.stopPropagation to stop multiple events from 
+        occuring at the same time. For example, user is not allowed to draw shape while dragging another one.
+        </p>
+        <h3><u>Diagram Editor App</u></h3>
+        <p id='intro'>
+        In my diagram editor app, it is divided into 2 sections which are palette and option (menu bar). For palette, it also consists of 2 parts 
+        which are shape bar and playground. They are separated by a boundary (vertical line). Only rectangle, square, circle and ellipse are provided in my app.
+        Since there is a boundary, any shape that is not dragged and dropped beyond the boundary will be eliminated directly or by a timer. For menu bar,
+        there are line, delete and resize buttons given. In order to remind user which shape is being used, I have included a tracking system showing 'Serving:# NUMBER'.
+        To make my app interactive, I also put some effects when button is hovered. 
+        </p>
+        <h4>-Description for Line button use:</h4>
+        <p id='intro'>
+        Since menu bar is designed for the last dragged shape, line is automatically linked to the last dragged shape when button is clicked. All user has to do is just moving 
+        mouse cursor back to playground and click on the shape he/she wants to link. Linking to shape with same number and shapes shown in the shape bar are not allowed. If it happens,
+        line will be removed and same goes to the situation when user clicks on nothing. While drawing line, user is also not allowed to perform multi-tasking like resizing shape. However,
+        deleting shape is permitted. With respect to those shapes linked with a line, line remains connected to shapes even if shapes are dragged.
+        </p>
+        <h4>-Description for Delete button use:</h4>
+        <p id='intro'>
+        Basically, this button is used for deleting shapes but what I have done is that my app can accept the action of removing shape along with relavant links to another shape(s). To make 
+        my program work fine, those shapes before boundary will be killed by boundary checker and timer. For latter, it is actually to eliminate the bug by clicking on shapes in shape bar 
+        instead of dragging. (Try to click on shapes in shape bar. Do not drag them and wait for a few seconds.)
+        </p>
+        <h4>-Description for Resize button use:</h4>
+        <p id='intro'>
+        This is what I did for my HD part. If resize button is clicked, user might notice that button label is changed to 'CANCEL' and a resize frame similar to Microsoft Word is shown on the 
+        currect serving shape. User is welcome to drag the dots inwards/outwards in order to enlarge or reduce the size of shape. The shape number on the top left corner of the shape is maintained
+        even if user tends to wrap around the shape. Similarly, when resize function is in use, user is not allowed to use delete and line buttons. Besides that ,dragging shape will disable the resize function
+        and turn the cancel button back to resize button. Certainly, user can click on the cancel button to stop resizing the shape as well.
+        </p>
+        <h4>-Description for Others:</h4>
+        <p id='intro'>
+        The extra work I have done other than delete button is also including the animation of changing color of currect serving shape every few milliseconds. It is implemented using the data structure I have learnt
+        in FIT1008 'Circular Queue' and the interval built-in function in typescript/javascript. The more user drags on the shapes, the faster its color changes. Lastly, there are definitely bugs exist in my app. However,
+        they might not be noticed since they might not even affect the functionality. For those did affect, I have fixed almost all of them. Therefore, users are welcome to use my program.
+        </p>
+        <h4>Created by: Ho Kong Zheng</h4>
+        <h4>Student ID: 28279174</h4>
+    </body>
+</html>

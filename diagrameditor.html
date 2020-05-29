@@ -1,0 +1,28 @@
+<head>
+    <style>
+        @import url(style.css);
+        #diagrameditor{
+            background-color: beige;
+        }
+        #option{
+            background-color: lightgrey;
+            margin-top:4px;
+        }
+    </style>
+    <script src="svgelement.js"></script>
+    <script src="observable.js"></script>
+    <script src="diagrameditor.js"></script>
+</head>
+
+<body>
+    <h1> Your diagram editor app goes here! </h1>
+    <svg id="diagrameditor" width="900" height="600">
+            <defs>
+                <marker id="connector" markerWidth="4" markerHeight="4" refX="2" refY="2">
+                        <circle cx="2" cy="2" r="2" stroke="none" fill="black"/>
+                </marker>
+            </defs>
+    </svg>
+    <svg id="option" width="900" height="130">
+    </svg>
+</body>
